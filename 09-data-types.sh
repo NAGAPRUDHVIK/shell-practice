@@ -12,4 +12,4 @@ echo "All Players:${PLAYERS[@]}"
 
 echo "The First Player:${PLAYERS[0]}"
 
-echo "The First Player:${PLAYERS[10]}"
+echo "The First Player:${PLAYERS[10]}" #Prints Null as no name exist at that index
