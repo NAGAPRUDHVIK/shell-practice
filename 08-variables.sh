@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo "Check wether all variables reccieved or not:$@"
+echo "Fetches all names which is passed from arguments :$@"
+
+echo "Fetches all names which is passed from arguments :$*"
