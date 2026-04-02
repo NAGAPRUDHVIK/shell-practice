@@ -14,8 +14,8 @@ echo "To print home directory:$HOME"
 
 echo "To print current PID:$$"
 
-sleep 10
+sleep 10 &
 
-echo "To previous PID:$!"
+echo "To get PID of last command in background:$!"
 
 
