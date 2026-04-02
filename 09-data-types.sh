@@ -1,0 +1,8 @@
+NUMBER1=100
+NUMBER2=200
+NUMBER3=DevSecOps
+
+SUM=$((NUMBER1+NUMBER2+NUMBER3))
+
+echo "Total sum=$SUM"
+
