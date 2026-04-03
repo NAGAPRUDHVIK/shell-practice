@@ -19,7 +19,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0]; then
+    if [ $1 -ne 0 ]; then
         echo "Installing $2... $R FAILED $N"
         exit 1
     else
@@ -29,7 +29,7 @@ VALIDATE(){
 
 #1->success, 2->failure, &->success (or) failure
 dnf list installed mysql & >> $LOG_FILE
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
     dnf install mysql -y & >> $LOG_FILE
     VALIDATE $? "MYSQL"
 else
@@ -37,7 +37,7 @@ else
 fi
 
 dnf list installed python3 & >> $LOG_FILE
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
     dnf install python3 -y & >> $LOG_FILE
     VALIDATE $? "Python3"
 else
@@ -45,7 +45,7 @@ else
 fi
 
 dnf list installed ngnix & >> $LOG_FILE
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
     dnf install ngnix -y & >> $LOG_FILE
     VALIDATE $? "ngnix"
 else
