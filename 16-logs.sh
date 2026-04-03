@@ -44,9 +44,9 @@ else
     echo -e "Python3 is already installed... $Y SKIPPING $N"
 fi
 
-dnf list installed nginx & >> $LOG_FILE
+dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]; then
-    dnf install nginx -y & >> $LOG_FILE
+    dnf install nginx -y &>>$LOG_FILE
     VALIDATE $? "nginx"
 else
     echo -e "nginx is already installed... $Y SKIPPING $N"
