@@ -44,10 +44,10 @@ else
     echo "Python3 is already installed... $Y SKIPPING $N"
 fi
 
-dnf list installed ngnix & >> $LOG_FILE
+dnf list installed nginx & >> $LOG_FILE
 if [ $? -ne 0 ]; then
-    dnf install ngnix -y & >> $LOG_FILE
-    VALIDATE $? "ngnix"
+    dnf install nginx -y & >> $LOG_FILE
+    VALIDATE $? "nginx"
 else
-    echo "ngnix is already installed... $Y SKIPPING $N"
+    echo "nginx is already installed... $Y SKIPPING $N"
 fi

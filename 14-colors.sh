@@ -13,7 +13,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0]; then
+    if [ $1 -ne 0 ]; then
         echo "Installing $2... $R FAILED $N"
         exit 1
     else
@@ -27,5 +27,5 @@ VALIDATE $? "MYSQL"
 dnf install python3 -y
 VALIDATE $? "PYTHON3"
 
-dnf install ngnix -y
-VALIDATE $? "NGNIX"
+dnf install nginx -y
+VALIDATE $? "nginx"
