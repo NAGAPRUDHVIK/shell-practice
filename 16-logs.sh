@@ -8,8 +8,8 @@ Y="\e[33m"
 N="\e[0m"
 
 LOGS_FOLDER="/var/logs/shell-script"
-SCRIPT_NAME="$(echo $0 | cut -d "." -f1)"
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME" #/var/logs/shell-script/15.colors
+SCRIPT_NAME="$( echo $0 | cut -d "." -f1 )"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" #/var/logs/shell-script/15.colors.log
 
 mkdir -p $LOGS_FOLER #if we use -p it will re-write the folder if it exists.
 
@@ -20,10 +20,10 @@ fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-        echo "Installing $2... $R FAILED $N"
+        echo -e "Installing $2... $R FAILED $N"
         exit 1
     else
-        echo "Installing $2... $G SUCCESS $N"
+        echo -e "Installing $2... $G SUCCESS $N"
     fi
 }
 
@@ -33,7 +33,7 @@ if [ $? -ne 0 ]; then
     dnf install mysql -y & >> $LOG_FILE
     VALIDATE $? "MYSQL"
 else
-    echo "MYSQL is already installed... $Y SKIPPING $N"
+    echo -e "MYSQL is already installed... $Y SKIPPING $N"
 fi
 
 dnf list installed python3 & >> $LOG_FILE
@@ -41,7 +41,7 @@ if [ $? -ne 0 ]; then
     dnf install python3 -y & >> $LOG_FILE
     VALIDATE $? "Python3"
 else
-    echo "Python3 is already installed... $Y SKIPPING $N"
+    echo -e "Python3 is already installed... $Y SKIPPING $N"
 fi
 
 dnf list installed nginx & >> $LOG_FILE
@@ -49,5 +49,5 @@ if [ $? -ne 0 ]; then
     dnf install nginx -y & >> $LOG_FILE
     VALIDATE $? "nginx"
 else
-    echo "nginx is already installed... $Y SKIPPING $N"
+    echo -e "nginx is already installed... $Y SKIPPING $N"
 fi
