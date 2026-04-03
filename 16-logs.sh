@@ -28,17 +28,17 @@ VALIDATE(){
 }
 
 #1->success, 2->failure, &->success (or) failure
-dnf list installed mysql & >> $LOG_FILE
+dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]; then
-    dnf install mysql -y & >> $LOG_FILE
+    dnf install mysql -y &>>$LOG_FILE
     VALIDATE $? "MYSQL"
 else
     echo -e "MYSQL is already installed... $Y SKIPPING $N"
 fi
 
-dnf list installed python3 & >> $LOG_FILE
+dnf list installed python3 &>>$LOG_FILE
 if [ $? -ne 0 ]; then
-    dnf install python3 -y & >> $LOG_FILE
+    dnf install python3 -y &>>$LOG_FILE
     VALIDATE $? "Python3"
 else
     echo -e "Python3 is already installed... $Y SKIPPING $N"
