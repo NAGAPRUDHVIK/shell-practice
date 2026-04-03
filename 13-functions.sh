@@ -8,11 +8,11 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0]; then
-        echo "ERROR::$2 is failed to install"
+    if [ $1 -ne 0 ]; then
+        echo "ERROR::$2 failed to install"
         exit 1
     else
-        echo "$2 is installed succesfully"
+        echo "$2 installed successfully"
     fi
 }
 
@@ -22,5 +22,5 @@ VALIDATE $? "MYSQL"
 dnf install python3 -y
 VALIDATE $? "PYTHON3"
 
-dnf install ngnix -y
-VALIDATE $? "NGNIX"
+dnf install nginx -y
+VALIDATE $? "nginx"
