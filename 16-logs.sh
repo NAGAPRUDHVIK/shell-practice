@@ -11,7 +11,7 @@ LOGS_FOLDER="/var/logs/shell-script"
 SCRIPT_NAME="$( echo $0 | cut -d "." -f1 )"
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" #/var/logs/shell-script/15.colors.log
 
-mkdir -p $LOGS_FOLER #if we use -p it will re-write the folder if it exists.
+mkdir -p $LOGS_FOLDER #if we use -p it will re-write the folder if it exists.
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR::Run the script with root previlage"
